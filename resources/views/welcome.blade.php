@@ -1,95 +1,78 @@
 <!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-        <title>Laravel</title>
+<head>
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-            .full-height {
-                height: 100vh;
-            }
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
 
-            .position-ref {
-                position: relative;
-            }
+    <title>Welcome to Java Jill</title>
+<style>
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+    h1 {
+        padding: 1px 2px 3px 4px;
+        text-align: center;
+        background-color: lavenderblush;
+        border-bottom: 2px solid lavender;
+        color:darkslateblue;
 
-            .content {
-                text-align: center;
-            }
+        }
+    nav ul li{
 
-            .title {
-                font-size: 84px;
-            }
+        list-style: none;
+        color:#000;
+        padding-bottom: 10px;
+        padding-right: 20px;
+        font-family: sans-serif;
+        font-weight: bold;
+        text-decoration: none;
+        color:darkslateblue;
+    }
+    nav ul li a{
+        color:darkslateblue;
+    }
+    footer{
+        clear:both;
+        text-align: left;
+        background-color: lavender;
+        border-top: 2px solid lavenderblush;
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+    }
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
+</style>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+</head>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
+<body>
+    <div class="container">
+        <header><h1><img src='java-jills.logo.png'>Welcome to Java Jills</h1></header>
+
+        <div class="col-sm-4">
+        <nav>
+            <ul>
+            <li><a href='contact.html'>Contact</a></li>
+            <li><a href='menu.html'>Menu</a></li>
+            </ul>
+        </nav>
         </div>
-    </body>
+        <div class="col-sm-8">
+        <section>
+        <p>Welcome to Java Jills!</p>
+        </section>
+        </div>
+        <footer>
+        &copy; 2015</footer>
+        </div>
+</body>
+
+
 </html>
