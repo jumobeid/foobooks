@@ -10,7 +10,12 @@
 # /routes/web.php
 Route::get('/search', 'BookController@search');
 /**
-* Main Route for orders /
+/* Main Route for songs /
+*/
+Route::get('/songs', 'SongsController@index');
+Route::get('/songs/{id}', 'SongsController@show');
+
+/* Main Route for orders /
 */
 //Route::get('/orders/submitted', 'OrdersController@show');
 Route::get('/orders/submitted', 'OrdersController@show');
