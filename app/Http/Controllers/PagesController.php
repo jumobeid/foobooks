@@ -20,7 +20,7 @@ class PagesController extends Controller
       return view('pages.contact');
     }
 	
-	public function people($title =null){
+	public function people(){
 	  
 	  $people=[
 	  'Me','I','MySelf'];

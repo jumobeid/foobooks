@@ -1,8 +1,8 @@
-@extends('layouts.master')
+@extends('layouts.main')
 
 
 @section('title')
-    Show songs
+    Cattle Mng System
 @endsection
 
 
@@ -12,15 +12,10 @@
 
 
 @section('content')
-    
-		<h1>Show songs:</h1>
+        
 		
-         
-		 {{ $song->title }}  lyrics
-		 
-	
-			
-	
+		
+
 @endsection
 
 

@@ -7,21 +7,19 @@
 
 
 @push('head')
-    <link href="/css/books/show.css" type='text/css' rel='stylesheet'>
+
 @endpush
 
 
 @section('content')
-        
-		
+
 	    <div class="container">
-		
 		{!!Form::open(['url'=>'/orders/submitted','method'=>'POST','class'=>'form-horizantal'])!!}
 			{{csrf_field()}}
+
 			<div class="form-group">
 			{!!Form::label('numberOfPeople','Number Of People:')!!}
 			{!!Form::number('numberOfPeople',$numberOfPeople,['class'=>'form-control'])!!}
-			
 			</div>
 
 			<div class="form-group">
@@ -30,9 +28,7 @@
 			</div>
 
 			<div class="form-group">
-
 			{!!Form::label('round','RoundTotal:')!!}
-
 			{!!Form::checkbox('round','true',($isRound)?'CHECKED':'',['class'=>'mycheckbox'])!!}
 
 			</div>
@@ -48,22 +44,24 @@
 			</div>
 
 		{!!Form::close()!!}
-		
+
 		<div class="alert alert-info">
                   <h3>{{ $valueForEach }}</h3>
          </div>
-		
+
 		@if(count($errors)>0)
-	
+
         <div class="alert alert-danger">
-          <ul>
+
            @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
+            <ul>
+             <li>{{ $error }}</li>
+            </ul>
            @endforeach
-          </ul>
+
         </div>
 		@endif
-		
+
 		</div>
 
 
@@ -71,5 +69,5 @@
 
 
 @push('body')
-    <script src="/js/books/show.js"></script>
+
 @endpush

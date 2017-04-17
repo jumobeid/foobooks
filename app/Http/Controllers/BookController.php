@@ -46,6 +46,7 @@ class BookController extends Controller
 
 		# You can get more information about a request than just the data of the form, for example...
 		dump($request->fullUrl());
+		dump($request->path());
 		dump($request->method());
 		dump($request->isMethod('post'));
 
