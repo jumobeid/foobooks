@@ -6,7 +6,7 @@
     <header>
 	    <div class="row">
 			<div class="col-md-3">
-			<a href="http://http://foobooks.jodwa.co/">
+			<a href="http://foobooks.jodwa.co/">
 				<img
 				src='/images/CMSlogo.jpg'
 				style='width:248px'
