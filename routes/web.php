@@ -5,7 +5,7 @@ use App\User;
 //Route::group(['middleware'=>['web']],function(){
 
 Route::get('/', function () {
-   return view('cms.index');
+   return view('tasks.index');
 });
 
 Route::get('/submitted', 'cmsController@show');
