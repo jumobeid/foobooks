@@ -2,10 +2,14 @@
 
 use App\User;
 
+//Route::group(['middleware'=>['web']],function(){
 
 Route::get('/', function () {
-   return view('CMS.index');
+   return view('cms.index');
 });
+
+Route::get('/submitted', 'cmsController@show');
+Route::post('/submitted', 'cmsController@submitted');
 /* Main Route for orders /
 */
 //Route::get('/orders/submitted', 'OrdersController@show');
@@ -15,6 +19,9 @@ Route::get('/', function () {
 
 # /routes/web.php
 Route::get('/search', 'BookController@search');
+
+
+Route::resource('tasks','TaskController');
 
 # /routes/web.php
 Route::resource('posts', 'PostController');
@@ -57,7 +64,7 @@ Route::get('/contact/{title?}', 'PagesController@contact');
 Route::get('/people/{title?}', 'PagesController@people');
 
 if(config('app.env') == 'local') {
-    #Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+    Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 }
 
 /**
@@ -107,3 +114,4 @@ Route::get('/debug', function() {
 
 });
 
+//});

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ 
+    <title>Basic with Jquery</title>
+    <script>
+    
+    $(document).ready(function(){
+                      
+                      
+                      });
+    
+    
+    </script>
+    <style>
+        ul{
+            padding:0;
+            margin: 0;
+            list-style: none;
+            
+            
+        }
+      
+        ul li a{
+            text-decoration: none;  
+        }
+        ul.child{
+            display: none;
+            box-sizing: border-box;
+            width:100% !important;
+            margin-top:10px;
+        }
+        ul.parent>li{
+          float:left;
+          width:150px;
+          height: 30px;
+          line-height: 30px;
+          text-align: center;
+          
+            
+        }
+    </style>
+    <script>
+    $(function(){
+     $('ul.parent>li').hover(function(){
+        $(this).find('ul.child').show(200); 
+       },function(){
+       });  
+    });
+    </script>
+</head>
+
+<body>
+<nav id="navigation">  
+<ul class="parent">
+   <li>Home 
+    <ul class="child">
+      <li>link1</li>
+      <li>link2</li>
+      <li>link3</li>
+    </ul>
+    </li> 
+   <li>About us
+      <ul class="child">
+      <li>link1</li>
+      <li>link2</li>
+      <li>link3</li>
+      </ul>
+      </li> 
+   <li>Services</li>  
+   <li>Works</li>  
+   <li>Contact us</li>  
+</ul>
+
+</nav>  
+</body>
+
+</html>

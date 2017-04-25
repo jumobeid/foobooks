@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+   
+ 
+    <title>Table Accessibility</title>
+<style>
+table,td,ht,th{
+border:1px solid;}
+</style>
+
+</head>
+
+<body>
+<table>
+<caption>My healthy list</caption>
+<thead>
+<tr>
+<th scope="col">Menu item</th>
+<th scope="col">Calories</th>
+<th scope="col">Fat (g)</th>
+</tr>
+ <tfoot>
+    <tr><td colspan="3"> Data from <a href="http://www.census.gov" >United States</a></td> 
+    </tr>
+    </tfoot>  
+   <tbody>
+<tr>
+<th scope="row">Chicken noodle soup</th>
+<td>120</td>
+<td>2</td>
+</tr>
+<tr>
+<th scope="row">Caesar salad</th>
+<td>400</td>
+<td>26</td>
+</tr>
+<tr>       
+ <th scope="row">Mjadara</th>
+<td>350</td>
+<td>5</td>
+</tr>
+    </tbody>   
+</table>
+
+
+</body>
+
+</html>

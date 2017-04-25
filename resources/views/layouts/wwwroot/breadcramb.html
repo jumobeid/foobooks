@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+   
+ 
+    <title>Bootstrap Starter Template</title>
+<style>
+/* 
+  Order of pseudo-"a" elements:
+  LoVe HAte (Link, Visited, Hover, Active 
+*/
+
+#breadcrumb a:link,
+#breadcrumb a:visited,
+#breadcrumb a:hover,
+#breadcrumb a:active,
+#breadcrumb li span {
+  color: navy;
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  font-size: small;
+  font-weight: normal;
+  padding: 0.5em;
+  text-decoration: none;
+}
+
+#breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+#breadcrumb li span {
+  color: black;
+}
+
+#breadcrumb {
+  background-color: #ddd;
+}
+
+#breadcrumb ul {
+  display: inline;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+#breadcrumb ul li {
+  display: inline;
+}
+
+#breadcrumb ul ul li {
+  background-image: url(images/arrow.gif);
+  background-position: left;
+  background-repeat: no-repeat;
+  padding-left: 25px;
+}
+
+</style>
+
+</head>
+
+<body>
+<div id="breadcrumb">
+  <ul>
+    <li><a href="http://dmoz.org/">Top</a>
+      <ul>
+        <li><a href="http://dmoz.org/Science/">Science</a>
+          <ul>
+            <li><a href="http://dmoz.org/Science/Biology/">Biology</a>
+              <ul>
+                <li><a href="http://dmoz.org/Science/Biology/Genetics/">
+                        Genetics</a>
+                  <ul>
+                    <li><a href="http://dmoz.org/Science/Biology/Genetics/Genomics/">
+                            Genomics</a>
+                      <ul>
+                        <li><span>Pharmacogenetics</span></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+
+</body>
+
+</html>

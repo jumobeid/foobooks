@@ -12,6 +12,17 @@ class PracticeController extends Controller {
 	/**
 	*update a particular book`
 	*/
+    public function practice11() {
+	
+	$result = Book::where('published', '>', 1800)
+	->orderBy('created_at' ,'desc')
+	->limit(5)
+	->get();
+    dump($result->toArray());
+	}
+	/**
+	*update a particular book`
+	*/
     public function practice10() {
 	# First get a book to delete
 	$book = Book::where('author', 'LIKE', '%Scott%')->first();

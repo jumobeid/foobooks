@@ -1,0 +1,66 @@
+/*
+  CSS file for books.html
+*/
+/*styles to page*/
+
+body {
+  background-color: #82e650;
+  
+}
+
+h1 {
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  background-color: white;
+  color: #ff7433;
+  padding: 10px;
+  border: 5px solid #ff7433;
+  margin: 0 auto;
+  width: 60%;
+}
+.booklist
+{
+    margin: 0 auto;
+    width: 80%;
+}
+/*overflow hidden for the img*/
+.book {
+  background-color: white;
+  border: 5px solid #ff7433;
+  overflow: hidden;
+  padding: 15px;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.author {
+  font-family: sans-serif;
+  font-style: italic;
+  color: #ff7433;
+}
+
+.publisher {
+  font-family: Arial;
+}
+
+.date {
+  padding-top: 15px;
+  line-height: 3px;
+}
+/*make sure the right side and left side are clear*/
+img {
+  float: right;
+  clear: both;
+  border:thin solid #ff7433;
+}
+
+ul {
+  list-style: none;
+}
+.book a:hover{
+    color:white;
+    background-color: blue;
+}
+

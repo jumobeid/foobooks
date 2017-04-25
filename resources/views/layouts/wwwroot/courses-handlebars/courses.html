@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="handlebars-v4.0.5.js"></script>
+    <script src="js1.js"></script>
+    <title>Basic with Jquery</title>
+    <style>
+        .handlebars {
+    display: none !important;
+}
+    </style>
+
+</head>
+
+<body>
+<form id="course_search_form" method="post">
+  <div>
+      <input type="text" id="search_query" name="search_query" size="40" placeholder="Search by title, instructor, description" />
+       <button type="button" name="search"id="search" value=search>Click Me!</button> 
+  </div>
+  <div id="courselist">
+      Course Listings will be updated here.
+  </div>
+</form>
+<div id="courselisttemplate" class="handlebars">
+<p>{{courses.length}} courses were found</p>
+<ul>
+    {{#courses}}
+    <li class="course">
+        <span class="number">{{course_group}} {{num_int}}{{num_char}}</span>
+        <br/>
+        <span class="title">{{title}}</span>
+        <br/>
+        <span class="faculty">{{faculty_text}}</span>
+        <br/>
+        <span class="meeting">{{meeting_text}}</span>
+    </li>
+    {{/courses}}
+</ul>
+</div>
+
+
+</body>
+
+</html>

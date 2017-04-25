@@ -1,33 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>
-        @yield('title', 'Cattle Mng System')
-    </title>
-
-    <meta charset='utf-8'>
-    <link href="/css/orders.css" type='text/css' rel='stylesheet'>
-	 <!-- Latest compiled and minified CSS -->
-	 <!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    @stack('head')
-
-</head>
+@include('partials._head')
 <body class="container">
 
     <header>
 	    <div class="row">
 			<div class="col-md-3">
+			<a href="/">
 				<img
 				src='/images/CMSlogo.jpg'
 				style='width:248px'
-				alt='BillSplitter Logo'>
+				alt='BillSplitter Logo'
+				title="home"></a>
 			</div>
 		
 			<div class="col-md-5">
@@ -35,7 +19,7 @@
 					<h1>Cattle Management System</h1>
 				</div>
 				<div class="col-md-5">
-				    <p>Welcome Administrator</p>
+						<p>Welcome Administrator</p>
 				</div>
 			</div>
 			
@@ -76,43 +60,25 @@
 		</div>
     </header>
 
-	
-		<nav class="navbar navbar-default">
-		  <div class="container-fluid">
-			<div class="navbar-header">
-			  <a class="navbar-brand" href="#">WebSiteName</a>
-			</div>
-			<ul class="nav navbar-nav">
-			  <li class="active"><a href="#">Home</a></li>
-			  <li><a href="#">Page 1</a></li>
-			  <li><a href="#">Page 2</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-			  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-			  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-			</ul>
-		  </div>
-		</nav>
+	@include('partials._nav')
+		
     <section>
-        @yield('content')
-		<div class="col-md-8">
-			<div class="panel panel-default">
-				<div class="panel-body">
-					<a href="https://www.w3schools.com">
-					<img src="/images/CM1_r3_c4.gif" alt="Go to W3Schools!" width="137" height="116" border="0">
-					</a>
-				</div>
-			</div>
-		<div>
+	@include('partials._messages')    
+    @yield('content')
+		
     </section>
 
-    <footer class="endit">
-        &copy; {{ date('Y') }}
+    <footer>
+	 <div class="class="container">
+	  <div class="row" id="sidebarcenter">
+	   <div class="well">&copy; {{ date('Y') }}</div>
+      </div> 
+	 </div>
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-    @stack('body')
+    <!--@stack('body')-->
 
 </body>
 </html>

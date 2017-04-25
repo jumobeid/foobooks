@@ -1,0 +1,21 @@
+div.extras1 {
+width: 30%;
+margin-right: 2%;
+float: left;
+background: yellow;
+}
+div.extras2 {
+width: 30%;
+margin-right: 2%;
+float: left;
+background: orange;
+}
+div.extras3 {
+width: 30%;
+margin-right: 2%;
+float: left;
+background: blue;
+}
+p{
+    background-color: red;
+}

@@ -1,0 +1,21 @@
+/* header layout */
+
+h1 { color: green; 
+border-bottom: 1px solid red;}
+h2 {
+color: red;
+}
+
+/* paragraph layout */
+p { font-size: small; font-family: sans-serif; margin-left: 100px;}
+
+/* image layout */
+img {
+float: right;
+margin: 0 12px;
+}
+body {font-size: 100%;}
+article {font-size: .875em;}
+/*based on inherited size of the body text */
+article h2 {font-size: 1.28571429em; }
+/*based on the article font size, not body */

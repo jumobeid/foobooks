@@ -1,0 +1,4 @@
+DirectoryIndex index.html index.php
+
+AddType text/html .inc
+AddOutputFilter INCLUDES .inc

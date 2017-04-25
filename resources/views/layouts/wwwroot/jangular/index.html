@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="congressApp">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="congress.js">
+    </script>
+    <script src="people.js">
+    </script></head>
+
+<body ng-controller="CongressController as congress">
+    <h1>US Congress</h1>
+    <table class="table table-striped ">
+
+        <tbody>
+            <tr ng-repeat="person in congress.people | orderBy:['name.last','name.first']">
+                <td><linked-name></linked-name></td>
+                <td>{{person.name.first}}</td>
+                <td>{{person.name.last}}</td>
+                <td>{{person.terms[person.terms.length - 1].party}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
