@@ -4,9 +4,7 @@ use App\User;
 
 
 
-Route::get('/', function () {
-   return view('cms.index');
-});
+Route::get('/', 'cmsController@index');
 
 Route::get('/submitted', 'cmsController@show');
 Route::post('/submitted', 'cmsController@submitted');
