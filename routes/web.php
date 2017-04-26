@@ -22,7 +22,7 @@ Route::get('/search', 'BookController@search');
 Route::resource('tasks','TaskController');
 Route::get('/rand','randomTaskController@show');
 Route::post('/rand','randomTaskController@edit');
-
+Route::get('/help', 'PagesController@index');
 # /routes/web.php
 Route::resource('posts', 'PostController');
 //Route::get('/posts', 'PostController@create');
