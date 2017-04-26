@@ -2,13 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Book;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
     //functions that will return values when invoked by Route :get
     public function index(){
-      return "view all books";
+        $books = Book::orderBy('title')->get(); # Query DB
+        #$newBooks = Book::orderBy('created_at', 'descending')->limit(3)->get(); # Query DB
+        $newBooks = $books->sortByDesc('created_at')->take(3); # Query existing Collection
+		$randBook= $newBooks->random();
+        return view('books.index')->with([
+            'books' => $books,
+            'newBooks' => $newBooks,
+			'randBook' => $randBook,
+        ]);
+
     }
 
     //public function view($title =null){

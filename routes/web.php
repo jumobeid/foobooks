@@ -13,7 +13,7 @@ Route::post('/submitted', 'cmsController@submitted');
 //Route::get('/orders/submitted', 'OrdersController@show');
 //Route::get('/', 'OrdersController@show');
 //Route::post('/', 'OrdersController@submitted');
-
+Route::get('/books', 'BookController@index');
 
 # /routes/web.php
 Route::get('/search', 'BookController@search');
