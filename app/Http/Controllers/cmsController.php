@@ -9,10 +9,8 @@ class cmsController extends Controller
 {
     //
 	
-	public function index(){
-		
-		return view('index');
-	}
+	
+	
     public function show(Request $request){
 		  $numberOfPeople = $request->get('numberOfPeople');
 

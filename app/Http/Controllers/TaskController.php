@@ -21,6 +21,7 @@ class TaskController extends Controller
 		//create a variable that holds all the not completed tasks
 		$notcompletedTasks= Task::where('status', '=', 'Not completed')->get();
 		
+		
 		//return the view and passon the variable
 		return view('tasks.index')->with([
 		    'completedTasks' => $completedTasks,
@@ -207,4 +208,5 @@ class TaskController extends Controller
 	return redirect()->route('tasks.index');
 	
     }
+	
 }

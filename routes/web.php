@@ -20,6 +20,8 @@ Route::get('/search', 'BookController@search');
 
 
 Route::resource('tasks','TaskController');
+Route::get('/rand','randomTaskController@show');
+Route::post('/rand','randomTaskController@edit');
 
 # /routes/web.php
 Route::resource('posts', 'PostController');
