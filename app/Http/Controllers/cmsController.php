@@ -8,7 +8,10 @@ use Validator, Input, Redirect;
 class cmsController extends Controller
 {
     //
-	
+	public function index(){
+		
+		return view('cms.index');
+	}
 	
 	
     public function show(Request $request){
