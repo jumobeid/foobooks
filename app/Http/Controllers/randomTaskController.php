@@ -21,7 +21,6 @@ class randomTaskController extends Controller
            return view('rand.show')->with('rand',$rand);
 	 } 
 	}
-	
 	public function edit()
 	{
 	 //create a variable that holds all the not completed tasks
@@ -33,4 +32,5 @@ class randomTaskController extends Controller
 		   $rand = $notcompletedTasks->random();
            return view('rand.show')->with('rand',$rand);
 	 } 
+	}
 }
