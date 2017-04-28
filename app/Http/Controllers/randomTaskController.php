@@ -14,11 +14,11 @@ class randomTaskController extends Controller
 	 //create a variable that holds all the not completed tasks
 	 $notcompletedTasks= Task::where('status', '=', 'Not completed')->get();
 	 if($notcompletedTasks->isEmpty()) {
-            Session::flash('fail', 'All tasks are completed');
-			return redirect('/tasks');
-     }else{
-		   $rand = $notcompletedTasks->random();
-           return view('rand.show')->with('rand',$rand);
+           $rand = $notcompletedTasks->random();
+           return view('rand.show')->with('rand',$rand); 
+     }else{ 
+		   Session::flash('fail', 'All tasks are completed');
+		   return redirect('/tasks');
 	 } 
 	}
 	public function edit()
@@ -26,11 +26,11 @@ class randomTaskController extends Controller
 	 //create a variable that holds all the not completed tasks
 	 $notcompletedTasks= Task::where('status', '=', 'Not completed')->get();
 	 if($notcompletedTasks->isEmpty()) {
-            Session::flash('fail', 'All tasks are completed');
-			return redirect('/tasks');
-     }else{
-		   $rand = $notcompletedTasks->random();
-           return view('rand.show')->with('rand',$rand);
+           $rand = $notcompletedTasks->random();
+           return view('rand.show')->with('rand',$rand); 
+     }else{ 
+		   Session::flash('fail', 'All tasks are completed');
+		   return redirect('/tasks');
 	 } 
 	}
 }
