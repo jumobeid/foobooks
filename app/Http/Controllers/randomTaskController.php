@@ -13,7 +13,7 @@ class randomTaskController extends Controller
 	  
 	 //create a variable that holds all the not completed tasks
 	 $notcompletedTasks= Task::where('status', '=', 'Not completed')->get();
-	 if($notcompletedTasks->isEmpty()) {
+	 if(!$notcompletedTasks->isEmpty()) {
            $rand = $notcompletedTasks->random(1);
            return view('rand.show')->with('rand',$rand); 
      }else{ 
@@ -25,7 +25,7 @@ class randomTaskController extends Controller
 	{
 	 //create a variable that holds all the not completed tasks
 	 $notcompletedTasks= Task::where('status', '=', 'Not completed')->get();
-	 if($notcompletedTasks->isEmpty()) {
+	 if(!$notcompletedTasks->isEmpty()) {
            $rand = $notcompletedTasks->random(1);
            return view('rand.show')->with('rand',$rand); 
      }else{ 
