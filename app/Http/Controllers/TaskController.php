@@ -17,15 +17,14 @@ class TaskController extends Controller
     {
         //create a variable that holds all the completed tasks
 		$completedTasks= Task::where('status', '=', 'Completed')->get();
-		
+
 		//create a variable that holds all the not completed tasks
 		$notcompletedTasks= Task::where('status', '=', 'Not completed')->get();
-		
-		
+
 		//return the view and passon the variable
 		return view('tasks.index')->with([
 		    'completedTasks' => $completedTasks,
-            'notcompletedTasks' => $notcompletedTasks,
+        'notcompletedTasks' => $notcompletedTasks,
 			]);
     }
 
@@ -35,7 +34,7 @@ class TaskController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(){
-		 
+
 
       return view('tasks.create');
     }
@@ -57,7 +56,7 @@ class TaskController extends Controller
 	  'due_date'=> 'required',
 	  'complete_percent'=> 'required',
       ]);
-	  
+
 	    //Store the data
 		  $newTask = new Task;
 		  $newTask->title = $request->get('title');
@@ -68,7 +67,7 @@ class TaskController extends Controller
 		  $newTask->complete_percent =$request->get('complete_percent');
 		  $newTask->notes =$request->get('notes');
 		  $today = date("Y-m-d");
-		  if($newTask->complete_percent=='100' && $today<$newTask->due_date) 
+		  if($newTask->complete_percent=='100' && $today<$newTask->due_date)
 		  {
 				$newTask->status='Completed';
 				$newTask->done_overdue='No';
@@ -77,23 +76,23 @@ class TaskController extends Controller
 			    $newTask->status='Completed';
 		        $newTask->done_overdue='Yes';
 		  }elseif($newTask->complete_percent!='100' && $today<$newTask->due_date)
-		  {	
+		  {
 		        $newTask->status='Not completed';
 		        $newTask->done_overdue='No';
 		  }else{
 			    $newTask->status='Not completed';
 		        $newTask->done_overdue='Yes';
 		  }
-		
+
 		  $newTask->save();
-		  
-		  
+
+
 		  Session::flash('success', 'The task was successfully saved!');
-		  
-		  
+
+
 		//redirect
 		return redirect()->route('tasks.show',$newTask->id);
-		  
+
     }
 
     /**
@@ -105,9 +104,9 @@ class TaskController extends Controller
     public function show($id)
     {
         //
-		
+
 		$newTask=Task::find($id);
-		
+
 		return view('tasks.show')->with('newTask',$newTask);
     }
 
@@ -121,12 +120,11 @@ class TaskController extends Controller
     {
         //find the post in the db and save as variable
 		$task = Task::find($id);
-		
-		 if(is_null($task)) {
-            Session::flash('fail', 'Task not found.');
-            return redirect('/tasks');
-        }
 
+    if(is_null($task)) {
+           Session::flash('fail', 'Task not found.');
+           return redirect('/tasks');
+       }
 		//return the view and pass the variable previously created
 		return view('tasks.edit')->with('task',$task);
     }
@@ -149,10 +147,10 @@ class TaskController extends Controller
 		  'due_date'=> 'required',
 		  'complete_percent'=> 'required',
 		  ]);
-	  
+
 	    //Store the data
 		  $newTask= Task::find($id);
-	
+
 		  $newTask->title = $request->get('title');
 		  $newTask->priority = $request->get('priority');
           $newTask->cow_id = $request->get('cow_id');
@@ -161,31 +159,38 @@ class TaskController extends Controller
 		  $newTask->complete_percent =$request->get('complete_percent');
 		  $newTask->notes =$request->get('notes');
 		  $today = date("Y-m-d");
-		  if($newTask->complete_percent=='100' && $today<$newTask->due_date) 
+		  if($newTask->complete_percent=='100')
 		  {
+			if($today<$newTask->due_date)
+		    {
 				$newTask->status='Completed';
 				$newTask->done_overdue='No';
-		  }elseif($newTask->complete_percent=='100' && $today>$newTask->due_date)
-		  {
+ 
+		    }else{
+		  
 			    $newTask->status='Completed';
 		        $newTask->done_overdue='Yes';
-		  }elseif($newTask->complete_percent!='100' && $today<$newTask->due_date)
-		  {	
+			}
+			$newTask->save();
+		    Session::flash('success', 'The changes were successfully saved!');
+			//redirect
+		    return redirect()->action('randomTaskController@show');
+ 
+		  }else{
+            if($today<$newTask->due_date)
+		    {
 		        $newTask->status='Not completed';
 		        $newTask->done_overdue='No';
-		  }else{
+		    }else{
 			    $newTask->status='Not completed';
 		        $newTask->done_overdue='Yes';
-		  }
+		    }
+			$newTask->save();
+		    Session::flash('success', 'The changes were successfully saved!');
+			//redirect
+			return redirect()->route('tasks.show',$newTask->id);
+          }
 		
-		  $newTask->save();
-		  
-		  
-		  Session::flash('success', 'The changes were successfully saved!');
-		  
-		  
-		//redirect
-		return redirect()->route('tasks.show',$newTask->id);
     }
 
     /**
@@ -196,17 +201,15 @@ class TaskController extends Controller
      */
     public function destroy($id)
     {
-     //find the task
-     $task = Task::find($id);
+      //find the task
+      $task = Task::find($id);
 
-	//delete the post
-	 $task->delete();
-	 
-	 Session::flash('success','The post was sucseesfully deleted');
-	 
-	//redirect to index page
-	return redirect()->route('tasks.index');
-	
+     	//delete the post
+     	$task->delete();
+
+     	Session::flash('success','The post was sucseesfully deleted');
+
+     	//redirect to index page
+     	return redirect()->route('tasks.index');
     }
-	
 }

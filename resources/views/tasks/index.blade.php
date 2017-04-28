@@ -17,23 +17,23 @@
 	   <div class="col-md-12">
 	    <h1>All completed taks</h1>
 		<table class="table table-striped">
-		<thead> 
-		   
+		<thead>
+
 			<th>Title</th>
 			<th>Notes</th>
 			<th>Start date</th>
 			<th>Due date</th>
-			<th></th>
+      <th></th>
 		</thead>
 		<tbody>
 			@foreach ($completedTasks as $task)
-			  <tr>
-			    <td><s>{{$task->title}}</s></td>
-				<td><s>{{substr($task->notes,0,50)}}{{strlen($task->notes)>50?"...":""}}</s></td>
-				<td><s>{{$task->start_date}}</s></td>
-				<td><s>{{$task->due_date}}</s></td>
-				<td><s><a href="{{route('tasks.show',$task->id)}}" class="btn btn-default btn-sm">View</a><a href="{{route('tasks.edit',$task->id)}}" class="btn btn-default btn-sm">Edit</a></td>
-			  </tr>
+      <tr>
+       <td><s>{{$task->title}}</s></td>
+       <td><s>{{substr($task->notes,0,50)}}{{strlen($task->notes)>50?"...":""}}</s></td>
+       <td><s>{{$task->start_date}}</s></td>
+       <td><s>{{$task->due_date}}</s></td>
+       <td><s><a href="{{route('tasks.show',$task->id)}}" class="btn btn-default btn-sm">View</a><a href="{{route('tasks.edit',$task->id)}}" class="btn btn-default btn-sm">Edit</a></td>
+      </tr>
 			@endforeach
 		</tbody>
 		</table>
@@ -43,8 +43,8 @@
 	   <div class="col-md-12">
 	    <h1>All not completed taks</h1>
 		<table class="table table-striped">
-		<thead> 
-		  
+		<thead>
+
 			<th>Title</th>
 			<th>Notes</th>
 			<th>Start date</th>
@@ -66,8 +66,8 @@
 		</tbody>
 		</table>
 	   </div>
-	   
-	
+
+
 	</div>
 @endsection
 

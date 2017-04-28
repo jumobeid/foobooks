@@ -17,7 +17,7 @@
   <div class="col-md-10 col-md-offset-1">
 	<h1>{{$newTask->title}}</h1>
 	<p>{{$newTask->notes}}</p>
-		
+
 		 <div class="col-md-6">
 			<div class="well">
 			<dl class="dl-horizontal">
@@ -36,7 +36,7 @@
 			</dl>
 			</div>
 		  </div>
-		  
+
 		  <div class="col-md-6">
 			  <div class="well">
 			    <div class="row">
@@ -49,20 +49,20 @@
 				  </dl>
 					  <div class="col-md-3 col-md-offset-2">
 					  {!!Html::linkRoute('tasks.edit','Edit',array($newTask->id),array('class'=>'btn btn-success btn-block'))!!}
-						
+
 					  </div>
-					  <div class="col-md-3 col-md-offset-2">
-					  {!!Form::open(['route'=>['tasks.destroy',$newTask->id],'method'=>'DELETE'])!!}
-					  {!!Form::submit('Delete',['class'=>'btn btn-danger btn-block'])!!}
-					  {!!Form::close()!!}	 	  
-					  </div>
+            <div class="col-md-3 col-md-offset-2">
+           {!!Form::open(['route'=>['tasks.destroy',$newTask->id],'method'=>'DELETE'])!!}
+           {!!Form::submit('Delete',['class'=>'btn btn-danger btn-block'])!!}
+           {!!Form::close()!!}
+           </div>
 			    </div>
 		     </div>
 		  </div>
-		  
-		  
-		
-		
+
+
+
+
   </div>
 </div>
 @endsection

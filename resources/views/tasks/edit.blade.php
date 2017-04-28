@@ -82,7 +82,7 @@
 
 	        <div class="col-md-9 col-md-offset-1">
 			<div class="form-group">
-             {!!Form::submit('Save edited task',['class'=>'btn btn-success form-control'])!!}			
+             {!!Form::submit('Save edited task',['class'=>'btn btn-success form-control'])!!}
 			</div>
 			</div>
 
