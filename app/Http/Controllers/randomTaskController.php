@@ -13,7 +13,7 @@ class randomTaskController extends Controller
 	  
 	 //create a variable that holds all the not completed tasks
 	 $notcompletedTasks= Task::where('status', '=', 'Not completed')->get();
-	 if(empty($notcompletedTasks)) {
+	 if($notcompletedTasks->isEmpty()) {
             Session::flash('fail', 'All tasks are completed');
 			return redirect('/tasks');
      }else{
@@ -25,7 +25,7 @@ class randomTaskController extends Controller
 	{
 	 //create a variable that holds all the not completed tasks
 	 $notcompletedTasks= Task::where('status', '=', 'Not completed')->get();
-	 if(empty($notcompletedTasks)) {
+	 if($notcompletedTasks->isEmpty()) {
             Session::flash('fail', 'All tasks are completed');
 			return redirect('/tasks');
      }else{
